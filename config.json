@@ -1,9 +1,15 @@
 {
-    "wallet": "RHbaCG4TcYka72m9fmyjpRVXSAs1aJEZjU",
-    "pool": "stratum+tcp://na.luckpool.net:3956",
-    "password": "x",
+    "pools": [
+        {
+            "name": "LuckPool (NA)",
+            "url": "stratum+tcp://na.luckpool.net:3956",
+            "timeout": 150,
+            "disabled": 0
+        }
+    ],
+    "user": "RHbaCG4TcYka72m9fmyjpRVXSAs1aJEZjU",
     "algo": "verus",
     "threads": 1,
     "cpu-priority": 5,
-    "max-miners": 75
+    "retry-pause": 5
 }
