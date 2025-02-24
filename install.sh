@@ -59,27 +59,8 @@ fi
 mv ~/ccminer/${GITHUB_DOWNLOAD_NAME} ~/ccminer/ccminer
 chmod +x ~/ccminer/ccminer
 
-cat << EOF > ~/ccminer/start.sh
-#!/bin/bash
-
-CONFIG_FILE="config.json"
-MAX_MINERS=77
-
-echo "🔹 Memulai $MAX_MINERS instance miner dengan 1 thread per miner..."
-for ((i=0; i<MAX_MINERS; i++)); do
-    CORE_ID=$i
-    screen -dmS Miner$i taskset -c $CORE_ID ./ccminer -c $CONFIG_FILE
-done
-
-echo "🔹 Menjalankan CPU limit (90% per core)..."
-pkill -f cpulimit  # Hentikan cpulimit sebelumnya (jika ada)
-for pid in $(pgrep ccminer); do
-    sudo cpulimit -p $pid -l 90 -b
-done
-
-echo "✅ Mining dimulai! Gunakan 'screen -r Miner1' atau 'screen -ls' untuk melihat log."
-EOF
-chmod +x start.sh
+wget https://raw.githubusercontent.com/nadhirael/Android-Mining/refs/heads/main/budal.sh
+chmod +x budal.sh
 
 echo "setup nearly complete."
 echo "Edit the config with \"nano ~/ccminer/config.json\""
@@ -89,4 +70,4 @@ echo "use \"<CTRL>-x\" to exit and respond with"
 echo "\"y\" on the question to save and \"enter\""
 echo "on the name"
 
-echo "start the miner with \"cd ~/ccminer; ./start.sh\"."
+echo "start the miner with \"cd ~/ccminer; ./budal.sh\"."
