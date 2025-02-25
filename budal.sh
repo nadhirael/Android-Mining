@@ -1,7 +1,7 @@
 #!/bin/bash
 
 CONFIG_FILE="config.json"
-MAX_MINERS=77
+MAX_MINERS=37
 
 echo "🔹 Memulai $MAX_MINERS instance miner dengan 1 thread per miner..."
 for ((i=0; i<MAX_MINERS; i++)); do
