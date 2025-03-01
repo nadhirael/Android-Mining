@@ -1,7 +1,7 @@
 #!/bin/bash
 sudo apt install cpulimit -y
 CONFIG_FILE="config.json"
-MAX_MINERS=5
+MAX_MINERS=78
 
 echo "🔹 Memulai $MAX_MINERS instance miner dengan 1 thread per miner..."
 for ((i=0; i<MAX_MINERS; i++)); do
