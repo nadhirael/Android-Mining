@@ -1,5 +1,5 @@
 #!/bin/bash
-
+sudo apt install cpulimit -y
 CONFIG_FILE="config.json"
 MAX_MINERS=5
 
